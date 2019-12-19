@@ -7,7 +7,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -18,25 +20,34 @@
             </div>
         </div>
     </div>
+    <div class="container">
+        <div class="row row-cols-2">
+          <div class="col">
+            <input type="text" placeholder="City"><button type="button">Search</button>
+          </div>
+          <div class="card">
+            <h4>City: <span id="city"></span></h4>
+            <h4>Main Weather: <span id="main_weather"></span></h4>
+            <h4>Description: <span id="description_weather"></span></h4>
+            <h4>Temperature: <span id="temperature"></span></h4>
+            <h4>Pressure: <span id="pressure"></span></h4>
+            <h4>Humidity: <span id="humidity"></span></h4>
+              </div>
+          <div class="row"></div>
+        </div>
+      </div>
 
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-            <input type="text" placeholder="City"><button type="button" class="query_btn btn btn-default btn-sm">Search</button><br>
-            
-        </div>
-    </div>
+
+
+
+
+
+
     
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 text-center">
-            <h2>City: <span id="city"></span></h2>
-            <h2>Main Weather: <span id="main_weather"></span></h2>
-            <h2>Description: <span id="description_weather"></span></h2>
-            <img id="weather_image" src="">
-            <h2>Temperature: <span id="temperature"></span></h2>
-            <h2>Pressure: <span id="pressure"></span></h2>
-            <h2>Humidity: <span id="humidity"></span></h2>
-        </div>
-    </div>
+
+    
+    
+    
         
          
          
