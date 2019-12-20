@@ -7,7 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script> src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"</script>
+  
 </head>
 
 <body>
@@ -23,23 +23,64 @@
     <div class="container">
         <div class="row row-cols-2">
           <div class="col">
-            <input type="text" placeholder="City"><button type="button">Search</button>
+            <input type="text" placeholder="City"><button type="button" class="search">Search</button>
           </div>
           <div class="card">
             <h4>City: <span id="city"></span></h4>
             <h4>Main Weather: <span id="main_weather"></span></h4>
             <h4>Description: <span id="description_weather"></span></h4>
             <h4>Temperature: <span id="temperature"></span></h4>
-            <h4>Pressure: <span id="pressure"></span></h4>
+            <h4>Wind Speed: <span id="wind_speed"></span></h4>
             <h4>Humidity: <span id="humidity"></span></h4>
+            <img id="weather_image" src="">
               </div>
           <div class="row"></div>
         </div>
       </div>
 
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+  
+  $(document).ready(function(){
+     var appID = "ed5ff13c76202a7fa5680907401ccdfd";
+
+     $(".search").click(function(){
+
+         var search_param = $(this).prev().val();
+        
+
+        if ($(this).prev().attr("placeholder") == "City"){
+            var weather = "http://api.openweathermap.org/data/2.5/weather?q=" + search_param + "&APPID=" + appID;
+        }
+        
+
+        $.getJSON(weather,function(json){
+            $("#city").html(json.name);
+            $("#main_weather").html(json.weather[0].main);
+            $("#description_weather").html(json.weather[0].description);
+            $("#temperature").html(json.main.temp);
+            $("#wind_speed").html(json.main.pressure);
+            $("#humidity").html(json.main.humidity);
+            $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png")
+
+        });
+
+        
+     });        
 
 
+        
 
+
+    
+  });
+
+
+  
+  
+  </script>
+   
+ 
 
 
 
