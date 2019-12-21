@@ -50,7 +50,7 @@
         
 
         if ($(this).prev().attr("placeholder") == "City"){
-            var weather = "http://api.openweathermap.org/data/2.5/weather?q=" + search_param + "&APPID=" + appID;
+            var weather = "" + search_param + "&APPID=" + appID;
         }
         
 
@@ -61,7 +61,7 @@
             $("#temperature").html(json.main.temp);
             $("#wind_speed").html(json.main.pressure);
             $("#humidity").html(json.main.humidity);
-            $("#weather_image").attr("src", "http://openweathermap.org/img/w/" + json.weather[0].icon + ".png")
+            $("#weather_image").attr("src", "" + json.weather[0].icon + ".png")
 
         });
 
